@@ -2,17 +2,17 @@
 
 import { revalidatePath } from 'next/cache'
 
-import { connectToDatabase } from '@/lib/database'
-import User from '@/lib/database/models/user.model'
-import Order from '@/lib/database/models/order.model'
-import Event from '@/lib/database/models/event.model'
-import { handleError } from '@/lib/utils'
+import  {connectToDatabase}  from "../database/index.js";
+import User from "../database/models/user.model.js";
+import Order from "../database/models/order.model.js";
+import Event from "../database/models/event.model.js";
+import { handleError } from "@/lib/utils"
 
 import { CreateUserParams, UpdateUserParams } from '@/types'
 
 export async function createUser(user: CreateUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
     const newUser = await User.create(user)
     return JSON.parse(JSON.stringify(newUser))
