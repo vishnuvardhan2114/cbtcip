@@ -12,7 +12,7 @@ import { CreateUserParams, UpdateUserParams } from '@/types'
 
 export async function createUser(user: CreateUserParams) {
   try {
-    await connectToDatabase();
+    await connectToDatabase()
 
     const newUser = await User.create(user)
     return JSON.parse(JSON.stringify(newUser))
@@ -49,7 +49,7 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
 
 export async function deleteUser(clerkId: string) {
   try {
-    await connectToDatabase();
+    await connectToDatabase()
 
     // Find user to delete
     const userToDelete = await User.findOne({ clerkId })
