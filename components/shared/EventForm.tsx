@@ -233,7 +233,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                         className="filter-grey"
                       />
-                      <p className="ml-3 whitespace-nowrap text-gray-600">End Date:</p>
+                      <p className="ml-3 whitespace-nowrap text-grey-600">End Date:</p>
                       <DatePicker 
                         selected={field.value} 
                         onChange={(date: Date) => field.onChange(date)} 
